@@ -4,12 +4,12 @@
 }
 html{
      /* overflow: hidden;  */
-
+  
 }
  
 body{
       
-      
+       text-transform: uppercase;
 }
 main{
     width:100%;
@@ -57,16 +57,37 @@ header h2{
   padding:45px;
   letter-spacing: 3px;
   text-transform: uppercase;
+  /* position: relative;
+  top:10px; */
 }
 .timezone h2{
     position:relative;
-    top:14px;
+    top:-19px;
+}
+.timezone img{
+     position:relative;
+     left:10px;
+}
+.timezone .user-time{
+
+    position:relative;
+     right:25%;
+     display: inline-block;
+     top:15%;
+}
+
+.timezone .cityname{
+   position:relative;
+   right:37%;
+  display:inline-block;
+  top:45%;
 }
 .icons{
     flex-grow: 1;
     text-align: center;
     padding:50px;
     letter-spacing:3px;
+     
   }
 
   .description{
@@ -158,6 +179,7 @@ input{
      display: flex;
      flex-direction: column;
      height:120vh;
+     letter-spacing: 3px;
 }
 
 .day-1,.day-2,.day-3,.day-4,.day-5{
@@ -165,8 +187,25 @@ input{
         background-color: aliceblue;
         flex-grow: 1;
          width:100%;
-
+         text-align: center;
+         display: inline-block;
+       position: relative;
 
 
 }
+
+
+ .day-1 h2{
+     font-size: 25px;
+     display: inline;
+ }
+     
+
+
+
+
+
+
+
+
 
