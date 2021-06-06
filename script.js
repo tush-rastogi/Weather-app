@@ -1,6 +1,5 @@
 window.addEventListener('load',()=>{
     
-      
     let longitude;
     let latitude;
     let status=document.querySelector("body > main > div > div.description-values > div.weather.status > h2");
@@ -59,11 +58,13 @@ window.addEventListener('load',()=>{
                     let date = new Date(a * 1000);
                     // Hours part from the timestamp
                     let hours = date.getHours();
+          
+                     
                     // Minutes part from the timestamp
                     let minutes = "0" + date.getMinutes();
                     // Seconds part from the timestamp
                     let seconds = "0" + date.getSeconds();
-                    
+                    // console.log(seconds);
                     // Will display time in 10:30:23 format
                     let convertedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 
@@ -84,8 +85,6 @@ window.addEventListener('load',()=>{
                 icons.setAttribute("src",`http://openweathermap.org/img/wn/${icon}@2x.png`);
                  
                  
-                   function fivehours(response)
-                   {
                 for(let i=0;i<5;i++)
                  {
                      
@@ -95,9 +94,8 @@ window.addEventListener('load',()=>{
                  }
                
                 // console.log(time);
-                }
+                
 
-                    fivehours(response);
                  for(let i=0;i<5;i++)
                  {
                       let a=document.querySelector(`.temp${i+1}`);
@@ -148,7 +146,7 @@ window.addEventListener('load',()=>{
       
             const{sunrise,sunset}=response.sys;
                   
-            sunrisetime.textContent=sunrise;
+            sunrisetime.textContent=convertedTime(sunrise);
             sunsettime.textContent=convertedTime(sunset);
             const{lon,lat}=response.coord;
             console.log(lon, lat);
@@ -184,7 +182,7 @@ window.addEventListener('load',()=>{
                              temperature.textContent=temp;
                              const{description}=response.current.weather[0];
                               status.textContent=description;
-                              humidityy.textContent=humidity;
+                              humidityy.textContent=humidity+"%";
                               
                                speeds.textContent=wind_speed;
 
@@ -229,7 +227,7 @@ window.addEventListener('load',()=>{
                  city.textContent=response.name;
                 });
 
-
+                 
 
        });
    
