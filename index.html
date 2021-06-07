@@ -5,6 +5,7 @@
     <head>
         <title>Weather</title>
          <link rel="stylesheet" href="style.css">
+         <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
          <script src="script.js"></script>
          <script src="https://kit.fontawesome.com/5d8a4766ad.js" crossorigin="anonymous"></script>
@@ -13,8 +14,8 @@
       
     <header>
       
-        <img src="icons/animated/rainy-1.svg"  class="header-1">
-        <img src="icons/animated/rainy-1.svg"  class="header-2">
+        <!-- <img src="icons/animated/rainy-1.svg"  class="header-1">
+        <img src="icons/animated/rainy-1.svg"  class="header-2"> -->
         <img src="icons/animated/rainy-1.svg"  class="header-3">
 
      <h2>Weather App</h2>
@@ -27,16 +28,17 @@
       
        
          <div class="content"> 
-            <div class="search">
+          <p class="user-time">User time</p> 
+          <div class="search">
           
           <form>
              
              <input type="search" placeholder=" Enter Your city Name" class="citysearch" required >
  
-            <i class="fa fa-search fa-lg button"></i>
+           <i class="fa fa-search fa-lg button"></i>
          </form>
        </div> 
- 
+    
 
       <div class="location">
 
@@ -44,7 +46,7 @@
 
         <h2 style="display:inline-block;">TimeZone</h2>
         <img src="" alt="" class="current-icon">
-        <p class="user-time">User time</p>
+        
 
         <h2 class="cityname"></h2>
      
@@ -52,8 +54,8 @@
   <div class="icons">
    <!-- <video src="/video/14503-sunset-sunrise-animation.mp4" loop type="video/mp4" width="70px" auto> </video> -->
    <img src="/img/animated-sun-image-0497.gif" alt="">   
-    <p>Sunrise:<span class="sunrise"></span></p>
-     <p>Sunset:<span class="sunset"></span></p>
+    <p style="font-size: 32px;" >Sunrise:<span class="sunrise"></span></p>
+     <p style="font-size: 32px;">Sunset:<span class="sunset"></span></p>
   
   </div>
           
@@ -65,10 +67,10 @@
             <div class="temperature">
 
                 <h2>
-                     Temperature(F)
+                     Temperature
        
                 </h2>
-       
+          
               </div>
           
            
@@ -102,7 +104,7 @@
                     temperature<sup>.</sup>C
        
                 </h2>
-       
+                 
               </div>
           
            
@@ -166,7 +168,7 @@
 
      <h2 style="position:absolute; top:0;right:25%" >Humidity<span></span></h2>
      
-      <h2 style="position:absolute; top:0;left:25%" >Status<span></span></h2>
+      <h2 style="position:absolute; top:0;left:27.9%" >Status<span></span></h2>
       
       <h2 class="temp1" style="position:absolute; bottom:36px;left:27px">Temperature<span></span></h2>
 
@@ -176,7 +178,7 @@
      
       <h2  class="status1" style="position:absolute; bottom:35px;left:25%" >Status<span></span></h2>
      
-      <img src="" alt="" class="img1" style="position: relative;top: 16px;">
+      <img src="" alt="" class="img1"it  style="position: relative;top: 16px;">
     
    
     </div>
@@ -189,7 +191,7 @@
 
      <h2 style="position:absolute; top:0;right:25%" >Humidity<span></span></h2>
      
-      <h2 style="position:absolute; top:0;left:25%" >Status<span></span></h2>
+      <h2 style="position:absolute; top:0;left:27.9%" >Status<span></span></h2>
       
     
       <h2 class="temp2" style="position:absolute; bottom:36px;left:27px">Temperature<span></span></h2>
@@ -198,7 +200,7 @@
 
      <h2  class="humid2" style="position:absolute;bottom: 31px; right: 27%;" >Humidity<span></span></h2>
      
-      <h2  class="status2" style="position:absolute; bottom:35px;left:25%" >Status<span></span></h2>
+      <h2  class="status2" style="position:absolute; bottom:35px;left:27.9%" >Status<span></span></h2>
       
     
     
@@ -214,7 +216,7 @@
 
      <h2 style="position:absolute; top:0;right:25%" >Humidity<span></span></h2>
      
-      <h2 style="position:absolute; top:0;left:25%" >Status<span></span></h2>
+      <h2 style="position:absolute; top:0;left:27.9%" >Status<span></span></h2>
       
      
       <h2 class="temp3" style="position:absolute; bottom:36px;left:27px">Temperature<span></span></h2>
@@ -223,7 +225,7 @@
 
      <h2  class="humid3" style="position:absolute; bottom: 31px; right: 27%;" >Humidity<span></span></h2>
      
-      <h2  class="status3" style="position:absolute; bottom:35px;left:25%" >Status<span></span></h2>
+      <h2  class="status3" style="position:absolute; bottom:35px;left:27.9%" >Status<span></span></h2>
       
     
     
@@ -242,7 +244,7 @@
   
        <h2 style="position:absolute; top:0;right:25%" >Humidity<span></span></h2>
        
-        <h2 style="position:absolute; top:0;left:25%" >Status<span></span></h2>
+        <h2 style="position:absolute; top:0;left:27.9%" >Status<span></span></h2>
         
       <h2 class="temp4" style="position:absolute; bottom:36px;left:27px">Temperature<span></span></h2>
 
@@ -264,7 +266,7 @@
   
        <h2 style="position:absolute; top:0;right:25%" >Humidity<span></span></h2>
        
-        <h2 style="position:absolute; top:0;left:25%" >Status<span></span></h2>
+        <h2 style="position:absolute; top:0;left:27.9%" >Status<span></span></h2>
         
     
         <h2 class="temp5" style="position:absolute; bottom:36px;left:27px">Temperature<span></span></h2>
@@ -297,10 +299,12 @@
 
    </div>
    <footer>
-         <h2>Having an Amazing Idea!!!</h2>
-       <h3>Wanna Contribute???</h3>
-       <h4>Add some extra feature,design,animation,etc..</h4>
-       <p>Github link..</p>
+         <h1>Having an Amazing Idea!!!</h1>
+       <h2>Wanna Contribute???</h2> 
+       <h2>Add some extra feature,design,animation,etc..</h2>
+        
+       <h2>Github link..</h2>
+       <a href="https://github.com/tush-rastogi/Weather-app.git" _blank>Click here</a>
        <!-- <p>Hope to see you..in pull request..</p> -->
  
    </footer>

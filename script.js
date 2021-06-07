@@ -13,14 +13,43 @@ window.addEventListener('load',()=>{
      let sunsettime=document.querySelector(".sunset");
      let hours=document.querySelectorAll("h3");
      let city=document.querySelector(".cityname");
+     let enter=document.querySelector("input");
     // let citysearch=document.querySelector(".citysearch");
         // let time=0;
 
        const apikey="659662f0657d2bd732d4518c8dfe6944";
-       timeupdate();
-     if(navigator.geolocation)
+       
+        timeupdate();
+     
+     
+       if(navigator.geolocation)
    {
-       navigator.geolocation.getCurrentPosition(x=>{
+   
+   
+    navigator.permissions.query({ name: 'geolocation' })
+      .then(status=>{
+
+         if(status.state=="denied")
+         {
+           alert("Hey..You just denied me to access your location... Go to settings -> Site Settings -> locations -> Blocked -> click the link on with .html extension->Refresh the page....");
+         
+           
+            
+           
+           
+           
+         }
+
+
+    });
+    
+    
+    
+    
+    navigator.geolocation.getCurrentPosition(x=>{
+
+           
+
            longitude=x.coords.longitude;
             latitude=x.coords.latitude;
          console.log(x);
@@ -77,8 +106,8 @@ window.addEventListener('load',()=>{
                         sunsettime.textContent=convertedTime(sunset);
 
                  status.textContent=description;
-                 temperature.textContent=temp;
-                 speeds.textContent=wind_speed;
+                 temperature.innerHTML=Math.ceil(temp-273.5)+`&deg;C`;
+                 speeds.textContent=wind_speed+" m/s";
                  humidityy.textContent=humidity+"%";
                   timezones.textContent=timezone;
 
@@ -104,21 +133,26 @@ window.addEventListener('load',()=>{
                       let d=document.querySelector(`.status${i+1}`);
                       let e=document.querySelector(`.img${i+1}`);
                    //  console.log(a);
-                        a.textContent=response.hourly[i].temp;
+                        a.innerHTML=Math.ceil((response.hourly[i].temp-273.5))+`&deg;C`;
+                          
 
                       b.textContent=response.hourly[i].humidity+"%";
-                      c.textContent=response.hourly[i].wind_speed;
+                      c.textContent=response.hourly[i].wind_speed+" m/s";
                        d.textContent=response.hourly[i].weather[0].description;
  
                          let ic=response.hourly[i].weather[0].icon;
                         e.setAttribute("src",`http://openweathermap.org/img/wn/${ic}@2x.png`)
 
                  }
-         
-                 let search=document.querySelector(".button");
-                     search.addEventListener('click',(a)=>{
+                 
 
-                    a.preventDefault();
+
+
+                       let search=document.querySelector(".button");
+
+                      let searching =function () {
+
+                    // a.preventDefault();
         // timezone.textContent=cityname.value;
            let cityname=document.querySelector(".citysearch");
        
@@ -168,23 +202,23 @@ window.addEventListener('load',()=>{
                  
 
                         // const{temp}=response.hourly.temp;
-                       let  d = new Date();
-                       let localTime = d.getTime();
-                        let localOffset = d.getTimezoneOffset() * 60000;
-                        let utc = localTime + localOffset;
-                         let y=utc + (1000 * response.timezone_offset);
-                          let citytime=new Date(y);
-                           console.log(citytime);
+                      //  let  d = new Date();
+                      //  let localTime = d.getTime();
+                      //   let localOffset = d.getTimezoneOffset() * 60000;
+                      //   let utc = localTime + localOffset;
+                      //    let y=utc + (1000 * response.timezone_offset);
+                      //     let citytime=new Date(y);
+                      //      console.log(citytime);
                            
-                           usertime.textContent=citytime;
+                      //      usertime.textContent=citytime;
                             const{temp,humidity,wind_speed}=response.current;
 
-                             temperature.textContent=temp;
+                             temperature.innerHTML=Math.ceil(temp-273.5)+"&deg;C";
                              const{description}=response.current.weather[0];
                               status.textContent=description;
                               humidityy.textContent=humidity+"%";
                               
-                               speeds.textContent=wind_speed;
+                               speeds.innerHTML=wind_speed+" m/s";
 
                                for(let i=0;i<5;i++)
                                {
@@ -194,10 +228,10 @@ window.addEventListener('load',()=>{
                                     let d=document.querySelector(`.status${i+1}`);
                                     let e=document.querySelector(`.img${i+1}`);
                                  //  console.log(a);
-                                      a.textContent=response.hourly[i].temp;
+                                 a.innerHTML=Math.ceil((response.hourly[i].temp-273.5))+`&deg;C`;
               
                                     b.textContent=response.hourly[i].humidity+"%";
-                                    c.textContent=response.hourly[i].wind_speed;
+                                    c.textContent=response.hourly[i].wind_speed+" m/s";
                                      d.textContent=response.hourly[i].weather[0].description;
                
                                        let ic=response.hourly[i].weather[0].icon;
@@ -217,7 +251,25 @@ window.addEventListener('load',()=>{
    });
   
 
+              };
+
+
+                
+              search.addEventListener('click',searching);
+              enter.addEventListener('keydown',(event)=>{
+                if(event.code==="Enter")
+               {  
+                 event.preventDefault();  
+                
+                  searching();
+               }
               });
+                  
+
+              
+
+
+
 
          // api to extract city name   
         const api2=`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apikey}`;
@@ -232,10 +284,22 @@ window.addEventListener('load',()=>{
        });
    
           
-    });
-   }
+    },
+    
+      err=>{
+         alert("May be you don't open your device location or denied me to access your location");
+         let x=document.querySelector("html");
 
-     
+          x.style.display="none";
+      
+        }
+    
+    );
+   
+  
+  }
+    
+
 
        function timeupdate() {
            let current = new Date();

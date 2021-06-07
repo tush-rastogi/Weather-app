@@ -2,15 +2,12 @@
 * {
     box-sizing: border-box;
 }
-/* html{
-     /* overflow: hidden;  
-  
-}*/
+
 
 body{
       
        text-transform: uppercase;
-      
+     
 }
 main{
     width:100%;
@@ -124,21 +121,22 @@ header h2{
 .background{
     width: 100%;
     height:95vh;
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
  
 
 .location{
     display:flex;
-    margin-top:117px;
-    margin-bottom: 100px;
+   
+    position:relative;
+    top:-75px;
     /* background-color: aliceblue; */
 }
 
 .timezone{
   flex-grow: 1;
-  text-align:center;
+  /* text-align:center; */
   padding:45px;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -148,24 +146,27 @@ header h2{
 .timezone h2{
     position:relative;
     top:-19px;
+    left:50px;
 }
 .timezone img{
      position:relative;
      left:10px;
 }
-.timezone .user-time{
+ .user-time{
 
     position:relative;
-     right:25%;
+     left:44px;
+     top:-33px;
      display: inline-block;
-     top:15%;
+     /* /* bottom:203px; */
+     font-size: 40px; 
 }
 
 .timezone .cityname{
-   position:relative;
-   right:37%;
+   position:absolute;
+   left:147px;
   display:inline-block;
-  top:45%;
+  top:158px;
 }
 .icons{
     flex-grow: 1;
@@ -183,7 +184,7 @@ header h2{
   .description-values{
     display: flex;
 /* flex-wrap: row; */
-   margin-top:80px;
+     position:relative;
 
 }
 
@@ -259,9 +260,10 @@ form{
 } */
 i{
     display: inline;
-    padding: 12px;
+    padding: 0;
     position: relative;
-    left:-47px;
+     right:2%;
+     top:-2px;
 }
 i:hover{
 
@@ -312,7 +314,7 @@ input{
 
 footer{
    width: 100%;
-   height:25vh;
+   height:30vh;
    border: 2px solid black;
    text-align: center;
   background-color: #000000;
@@ -323,15 +325,57 @@ footer{
   
 }
 
-footer h2{
+/* footer h2{
      display: inline-block;
 
 
-}
+} */
 
 
 
+   /* Responsive design... */
+ @media screen and (max-width:1000px) {
+    
+   .background{
 
+      height:50vh;
+   }
+    
+    .timezone .user-time {
+        font-size: 30px;
+    }
+    .forecast-content{
+        height: 69vh;
+    }
+
+    .timezone .cityname{
+        left: 100px;
+         top: 200px;
+    }
+
+    .icon-1{
+        left: 72px;
+        width: 14%;
+    }
+   
+  .icon-2{
+      width: 9%;
+      left:-29px;
+  }
+
+  .icon-5{
+      width: 14%;
+      right:-5px;
+  }
+
+  .header-3{
+      width:18%;
+      right:184px;
+      top:-10px;
+  }
+ 
+
+} 
 
 
 
