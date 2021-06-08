@@ -13,10 +13,7 @@ window.addEventListener('load',()=>{
      let sunsettime=document.querySelector(".sunset");
      let hours=document.querySelectorAll("h3");
      let city=document.querySelector(".cityname");
-     let enter=document.querySelector("input");
-    // let citysearch=document.querySelector(".citysearch");
-        // let time=0;
-
+     let enter=document.querySelector("input"); 
        const apikey="659662f0657d2bd732d4518c8dfe6944";
        
         timeupdate();
@@ -33,11 +30,6 @@ window.addEventListener('load',()=>{
          {
            alert("Hey..You just denied me to access your location... Go to settings -> Site Settings -> locations -> Blocked -> click the link on with .html extension->Refresh the page....");
          
-           
-            
-           
-           
-           
          }
 
 
@@ -55,11 +47,6 @@ window.addEventListener('load',()=>{
          console.log(x);
            console.log(longitude +" "+latitude);
       
-          //const api=`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apikey}`;
-         // console.log(apim);
-        //   console.log(futureapi);
-         
-              
        let api=`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely&appid=${apikey}`;
         console.log(api);
              
@@ -70,9 +57,9 @@ window.addEventListener('load',()=>{
                   const {description}=response.current.weather[0];
                   const{temp,humidity}=response.current;
                   const{wind_speed}=response.current;
-                  //const{name}=response;
+                  
                   let {icon}=response.current.weather[0];
-                //  const{country}=response.sys;
+               
                 console.log(wind_speed); 
                    const {sunrise}=response.current;
                    const{sunset}=response.current;
@@ -122,9 +109,6 @@ window.addEventListener('load',()=>{
                     
                  }
                
-                // console.log(time);
-                
-
                  for(let i=0;i<5;i++)
                  {
                       let a=document.querySelector(`.temp${i+1}`);
@@ -200,17 +184,7 @@ window.addEventListener('load',()=>{
                         const{icon}=response.current.weather[0];
                         icons.setAttribute("src",`http://openweathermap.org/img/wn/${icon}@2x.png`);
                  
-
-                        // const{temp}=response.hourly.temp;
-                      //  let  d = new Date();
-                      //  let localTime = d.getTime();
-                      //   let localOffset = d.getTimezoneOffset() * 60000;
-                      //   let utc = localTime + localOffset;
-                      //    let y=utc + (1000 * response.timezone_offset);
-                      //     let citytime=new Date(y);
-                      //      console.log(citytime);
-                           
-                      //      usertime.textContent=citytime;
+ 
                             const{temp,humidity,wind_speed}=response.current;
 
                              temperature.innerHTML=Math.ceil(temp-273.5)+"&deg;C";
@@ -310,4 +284,3 @@ window.addEventListener('load',()=>{
         }     
 
     });
-       

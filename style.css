@@ -7,6 +7,7 @@
 body{
       
        text-transform: uppercase;
+       /* overflow-x: hidden; */
      
 }
 main{
@@ -120,7 +121,7 @@ header h2{
 
 .background{
     width: 100%;
-    height:95vh;
+    height:93vh;
     opacity: 0.9;
 }
 
@@ -314,7 +315,7 @@ input{
 
 footer{
    width: 100%;
-   height:30vh;
+   height:40vh;
    border: 2px solid black;
    text-align: center;
   background-color: #000000;
@@ -322,14 +323,15 @@ footer{
   letter-spacing: 3px;
   border-radius: 30px;
   margin-top: 3px;
-  
+   
 }
 
-/* footer h2{
-     display: inline-block;
+ footer a{
+    
+       color: white;
+       font-size: 30px;
 
-
-} */
+} 
 
 
 
@@ -374,6 +376,12 @@ footer{
       top:-10px;
   }
  
+
+   footer {
+       height:28%;
+   }
+
+
 
 } 
 
