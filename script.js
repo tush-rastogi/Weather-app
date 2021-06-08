@@ -231,7 +231,7 @@ window.addEventListener('load',()=>{
                 
               search.addEventListener('click',searching);
               enter.addEventListener('keydown',(event)=>{
-                if(event.code==="Enter")
+                if(event.keyCode=="13")
                {  
                  event.preventDefault();  
                 
