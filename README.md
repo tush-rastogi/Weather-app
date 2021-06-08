@@ -1,5 +1,8 @@
 # Weather-app
 
+# Open it from chrome or modern browser in mobile for better experience.May be some content is not showing properly on old browser or your device default browser.
+
+
 1-Used OpenWeather Api to fetch weather data.<br>
 2-Entering invalid city gives you alert message that "City not found"<br>
 3-User will not able to see the content if he denied to access the location..<br>
