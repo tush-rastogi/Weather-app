@@ -1,7 +1,7 @@
 # Weather-app
 
-# Open it from chrome or modern browser in mobile for better experience.May be some content is not showing properly on old browser or your device default browser.
-
+# Open it from chrome or modern browser in mobile for better experience.May be some content is not showing properly on old browser or your device default browser.<br>
+# Link-https://tush-rastogi.github.io/Weather-app/
 
 1-Used OpenWeather Api to fetch weather data.<br>
 2-Entering invalid city gives you alert message that "City not found"<br>
